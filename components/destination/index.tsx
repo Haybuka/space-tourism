@@ -21,6 +21,7 @@ const Index = () => {
             height={300}
             alt="destination"
             src={imgSrc}
+            className="xl:translate-x-14"
           />
           <div>
            <DestinationTab destinations={destinations} setImgSrc={setImgSrc} />

@@ -2,7 +2,9 @@ import Link from "next/link";
 import React from "react";
 import styles from "./navigation.module.css";
 import Image from "next/image";
+
 const Navigation = () => {
+
   const navItems = [
     {
       path: "/",
@@ -38,7 +40,9 @@ const Navigation = () => {
             height={40}
           />
         </h3>
-        <ul className={`${styles.navleft} flex py-6 w-[600px] pl-[80px] relative`}>
+        <ul
+          className={`${styles.navleft} flex py-6 w-[600px] pl-[80px] relative`}
+        >
           {navItems.map((item) => (
             <Link
               href={item.path}
@@ -52,6 +56,7 @@ const Navigation = () => {
             </Link>
           ))}
         </ul>
+     
       </nav>
     </header>
   );

@@ -1,6 +1,23 @@
 import React from "react";
+import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import { Tourism } from "../space";
 import { Tab } from "@headlessui/react";
+import styles from './destination.module.css'
+
+const bellefair = Bellefair({
+    subsets: ["latin"],
+    weight: ["400"],
+  });
+  const ballow = Barlow({
+    subsets: ["latin"],
+    weight: ["400"],
+  });
+  
+  const ballowc = Barlow_Condensed({
+    subsets: ["latin"],
+    weight: ["400"],
+  });
+
 
 type destinationTabProp = {
   destinations: Tourism["destinations"];
@@ -13,14 +30,14 @@ const DestinationTab = ({ destinations, setImgSrc }: destinationTabProp) => {
         {destinations.map((destination, id) => {
           console.log(destination);
           return (
-            <Tab as="p" onClick={() => setImgSrc(destination.images.png)}>
+            <Tab onClick={() => setImgSrc(destination.images.png)} className={`${ballowc.className} tracking-widest focus:outline-none outline-none`}>
               {({ selected }) => (
                 /* Use the `selected` state to conditionally style the selected tab. */
                 <span
                   className={
                     selected
-                      ? "bg-blue-500 outline-none focus:border-none border-none text-white inline-block mr-4 pb-2 uppercase"
-                      : " text-white outline-none focus:border-none border-none inline-block mr-4 uppercase cursor-pointer"
+                      ? `${styles.active} `
+                      : ` ${styles.inactive} `
                   }
                 >
                   {destination.name}
@@ -32,21 +49,21 @@ const DestinationTab = ({ destinations, setImgSrc }: destinationTabProp) => {
       </Tab.List>
       <Tab.Panels>
         {destinations.map((destination, id) => {
-          console.log(destination);
+         
           return (
             <Tab.Panel as="aside">
               <section>
-                <h4 className="text-[100px]">{destination.name}</h4>
-                <p className="text-lg my-8">{destination.description}</p>
+                <h4 className={`${bellefair.className} text-[100px] uppercase leading-[100px] my-8`}>{destination.name}</h4>
+                <p className={`${ballow.className} text-lg my-8`}>{destination.description}</p>
               </section>
               <footer className="flex justify-between items-center border-t pt-6">
                 <p>
-                  <span className="block">AVG.DISTANCE</span>
-                  <span className="block">{destination.distance}</span>
+                  <span className={`${ballowc.className} block uppercase text-sm tracking-widest`}>AVG.  DISTANCE</span>
+                  <span className={`${bellefair.className} block uppercase text-2xl`}>{destination.distance}</span>
                 </p>
                 <p>
-                  <span className="block">EST. TRAVEL TIME</span>
-                  <span className="block">{destination.travel}</span>
+                  <span className={`${ballowc.className} block uppercase text-sm tracking-widest`}>EST. TRAVEL TIME</span>
+                  <span className={`${bellefair.className} block uppercase text-2xl`}>{destination.travel}</span>
                 </p>
               </footer>
             </Tab.Panel>

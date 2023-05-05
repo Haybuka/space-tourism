@@ -38,7 +38,7 @@ const Navigation = () => {
             height={40}
           />
         </h3>
-        <ul className={`${styles.navleft} flex py-3 w-[800px] pl-[100px]`}>
+        <ul className={`${styles.navleft} flex py-6 w-[600px] pl-[80px] relative`}>
           {navItems.map((item) => (
             <Link
               href={item.path}

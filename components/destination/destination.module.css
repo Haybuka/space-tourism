@@ -1,0 +1,8 @@
+.destination {
+    @apply h-screen w-screen bg-red-400 flex justify-between items-center px-[150px] 2xl:px-[200px];
+    background-image: url("/assets/destination/background-destination-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  

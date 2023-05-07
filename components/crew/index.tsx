@@ -5,16 +5,17 @@ import places from "../../data.json";
 import Image from "next/image";
 // import DestinationTab from "./destinationTab";
 import { Tourism } from "../space";
+import CrewTab from "./crewTab";
 
 const Index = () => {
-  const [destinations, setDestinations] = useState<Tourism["destinations"]>(
-    places["destinations"]
-  );
+  const [crew, setCrew] = useState<Tourism["crew"]>(places["crew"]);
+
+  console.log(crew);
   const [imgSrc, setImgSrc] = useState("/assets/destination/image-moon.png");
   return (
-    <section className={styles.destination}>
+    <section className={styles.crew}>
       <div className="w-full">
-        <Title count={2} title="meet your crew"/>
+        <Title count={2} title="meet your crew" />
         <section className="flex justify-between items-center">
           <Image
             width={300}
@@ -24,7 +25,7 @@ const Index = () => {
             className="xl:translate-x-14"
           />
           <div>
-           {/* <DestinationTab destinations={destinations} setImgSrc={setImgSrc} /> */}
+            <CrewTab />
           </div>
         </section>
       </div>

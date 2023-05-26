@@ -34,3 +34,13 @@ const Index = () => {
 };
 
 export default Index;
+
+
+//  <Link
+// to load navbar 
+//           className={router.pathname == nav.path && "active_nav"}
+//           href={nav.path}
+//         >
+//           {/* Name of nav item goes here, a fix for the double click bug? */}
+//           <span className="inline-block mr-2 dropdown">{nav.name}</span>
+//         </Link>

@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <section className={styles.destination}>
       <div className="w-full">
-        <Title />
+        <Title text="Pick your destination" index={2} />
         <section className="flex justify-between items-center">
           <Image
             width={300}
